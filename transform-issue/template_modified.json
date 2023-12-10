@@ -1,0 +1,44 @@
+{
+  "template": {
+    "settings": {
+      "index": {
+        "lifecycle": {
+          "name": "ilm-stock",
+          "rollover_alias": "stock-shop-car"
+        },
+        "number_of_shards": "1",
+        "number_of_replicas": "0"
+      }
+    },
+    "mappings": {
+      "_routing": {
+        "required": false
+      },
+      "dynamic": false,
+      "_source": {
+        "excludes": [],
+        "includes": [],
+        "enabled": true
+      },
+      "dynamic_templates": [],
+      "properties": {
+        "address": {
+          "type": "text"
+        },
+        "model": {
+          "type": "keyword"
+        },
+        "brand": {
+          "type": "keyword"
+        },
+        "timestamp": {
+          "type": "date"
+        }
+      }
+    }
+  },
+  "index_patterns": [
+    "stock-cars-*"
+  ],
+  "composed_of": []
+}
